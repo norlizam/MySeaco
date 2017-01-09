@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="4" id="4">
+	<SimpleField name="NAM" type="string"></SimpleField>
+	<SimpleField name="ARM" type="string"></SimpleField>
+	<SimpleField name="FEAT_CODE" type="string"></SimpleField>
+	<SimpleField name="RCT" type="string"></SimpleField>
+</Schema>
+<Folder><name>4</name>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#4">
+		<SimpleData name="NAM">Islam</SimpleData>
+		<SimpleData name="FEAT_CODE">BH0010</SimpleData>
+		<SimpleData name="RCT">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><altitudeMode>clampToGround</altitudeMode><outerBoundaryIs><LinearRing><altitudeMode>clampToGround</altitudeMode><coordinates>176.55860730133395,29.206624832062968 176.55471699579576,29.207042028840064 176.55483954055592,29.208221536607571 176.55455679711741,29.209649711215494 176.55408238278869,29.210714848827063 176.55301122775657,29.212260403637821 176.55457311025188,29.213706472719714 176.55509901051201,29.214609616822386 176.55557306354441,29.216192358249437 176.5573869400537,29.216747672643621 176.56336613825468,29.215911898657222 176.56238764911367,29.211858236699666 176.56136416036003,29.209725662387573 176.56033017202319,29.208377241594288 176.55860730133395,29.206624832062968</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#4">
+		<SimpleData name="NAM">Hindu</SimpleData>
+		<SimpleData name="FEAT_CODE">BH0010</SimpleData>
+		<SimpleData name="RCT">4</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><altitudeMode>clampToGround</altitudeMode><outerBoundaryIs><LinearRing><altitudeMode>clampToGround</altitudeMode><coordinates>176.22281949756055,29.463834521362401 176.22572559206233,29.462924262828292 176.22900784940549,29.461050997047824 176.22811657853029,29.458791627634714 176.22683918832067,29.457417811906932 176.22616071228407,29.457218596229222 176.22422522161608,29.458635601086083 176.22287356613603,29.460701033645488 176.22281949756055,29.463834521362401</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#4">
+		<SimpleData name="NAM">Hindu</SimpleData>
+		<SimpleData name="FEAT_CODE">BH0010</SimpleData>
+		<SimpleData name="RCT">4</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><altitudeMode>clampToGround</altitudeMode><outerBoundaryIs><LinearRing><altitudeMode>clampToGround</altitudeMode><coordinates>176.91995368064744,29.512371905869735 176.91524072625808,29.513373651074421 176.91458450214068,29.514410866214103 176.91587057366672,29.516131854846773 176.91796713412305,29.517887176637988 176.9198674426442,29.518284359026428 176.92249244373789,29.516817659628106 176.92069323887324,29.514840275654276 176.91995368064744,29.512371905869735</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#4">
+		<SimpleData name="NAM">Islam</SimpleData>
+		<SimpleData name="FEAT_CODE">BH0010</SimpleData>
+		<SimpleData name="RCT">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><altitudeMode>clampToGround</altitudeMode><outerBoundaryIs><LinearRing><altitudeMode>clampToGround</altitudeMode><coordinates>176.38529622369978,29.147387876200245 176.38272465110867,29.144894680058009 176.38151954219575,29.144986177259433 176.37949715853196,29.147743712157418 176.37975819319675,29.149025709607713 176.38279236447022,29.150652588261345 176.38395824908568,29.14885870464002 176.38529622369978,29.147387876200245</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder>
+</Document></kml>

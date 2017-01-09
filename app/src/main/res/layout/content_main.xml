@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="jasonpaulraj.myseaco.MainActivity"
+    android:background="#ed5d5d">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@drawable/logo1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:backgroundTint="#df6262"
+        android:background="#f29191"
+        android:id="@+id/linearLayout"></LinearLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/view_location1"
+        android:layout_marginLeft="190dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="112dp"
+        android:id="@+id/imgBtnViewLoc"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/linearLayout"
+        android:layout_toEndOf="@+id/linearLayout" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/add_location1"
+        android:id="@+id/imgBtnAddLoc"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/imgBtnViewLoc"
+        android:layout_alignLeft="@+id/imgBtnViewLoc"
+        android:layout_alignStart="@+id/imgBtnViewLoc" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/view_list"
+        android:id="@+id/imgBtnViewList"
+        android:layout_marginTop="80dp"
+        android:layout_below="@+id/imgBtnAddLoc"
+        android:layout_alignLeft="@+id/imgBtnAddLoc"
+        android:layout_alignStart="@+id/imgBtnAddLoc" />
+
+    <!--<Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_view"
+        android:id="@+id/button_view"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/button_edit"
+        android:layout_alignStart="@+id/button_edit"
+        android:background="#f7f2d5d5" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_edit"
+        android:id="@+id/button_edit"
+        android:layout_marginTop="59dp"
+        android:layout_below="@+id/button_view"
+        android:layout_centerHorizontal="true"
+        android:background="#edc4c4" />
+
+    <Button
+        android:text="@string/button_edit2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_edit2"
+        android:layout_below="@+id/button_edit"
+        android:layout_toRightOf="@+id/linearLayout"
+        android:layout_toEndOf="@+id/linearLayout"
+        android:layout_marginTop="60dp"
+        android:background="#edc4c4"/>-->
+
+
+</RelativeLayout>

@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">GIS</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_login">Sign in</string>
+
+
+    <!-- Strings related to mainActivity -->
+    <string name="title_activity_main">Main</string>
+    <string name="button_view">View Map</string>
+    <string name="button_edit">Input Points</string>
+    <string name="button_edit2">Input Points Offline</string>
+
+    <!--Strings related to mainActivity Offline-->
+    <string name="button_editOff">Add Offline Points</string>
+    <string name="button_viewOff">View Offline Points</string>
+
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."</string>
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="title_activity_sign_in">SignIn</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_user">UserActivity</string>
+    <string name="login_text">Login Page</string>
+    <string name="username_text">User Name</string>
+    <string name="password_text">Password</string>
+    <string name="attempt_text">Attempt</string>
+    <string name="button_login_text">Login</string>
+    <string name="screen_page_text">Welcome  to the second page</string>
+    <string name="title_activity_test">testActivity</string>
+    <string name="title_activity_mapedit">Map</string>
+
+    <!--Dialog Edit Maps-->
+    <string name="txtViewBarcode"><b>SEACO Barcode</b></string>
+    <string name="txtViewLat"><b>Latitude</b></string>
+    <string name="txtViewLon"><b>Longitude</b></string>
+    <string name="txtViewAddress"><b>Address</b></string>
+    <string name="txtViewDot"><b>:</b></string>
+    <string name="btnSave">Save</string>
+    <string name="btnEdit">Edit</string>
+
+    <!--Address-->
+    <string name="txtViewHouseNo"><b>What is the number of the dwelling?\n</b>
+        <i>Please include "No" or "Lot" as part of the answer (I.e: if the house number is 10, then type "No.10" or if the
+        house number is lot 23A, then type "Lot 23A")</i></string>
+    <string name="txtViewHouseStreetType"><b>What type of the street of that dwelling?</b></string>
+    <string name="radBtnHouseStreetType_Jln">Jalan</string>
+    <string name="radBtnHouseStreetType_Lrg">Lorong</string>
+    <string name="radBtnHouseStreetType_NA">Not applicable</string>
+    <string name="txtViewHouseStreetName"><b>What is the street name of the dwelling?\n</b>
+    <i>Do not include "Jalan/Lorong" as part for the answer (i.e: If "Jalan Asam" or "Lorong Limau, then only  type "Asam" or "Limau")</i></string>
+    <string name="txtViewHouseAreaType"><b>What type of area that dwelling in?</b></string>
+    <string name="radBtnHouseAreaType_Tmn">Taman</string>
+    <string name="radBtnHouseAreaType_Kg">Kampung</string>
+    <string name="radBtnHouseAreaType_Felda">Felda</string>
+    <string name="radBtnHouseAreaType_NA">Not Applicable</string>
+     <string name="txtViewHouseAreaName"><b>Which taman/kampung/felda is that dwelling in?\n</b>
+    <i>Do not include "Taman","Kampung, or "Felda" as part for the answer (i.e: If "Taman Segar", then only type "Segar",If "Kampung Lubok Batu", then only type "Lubok Batu" or If "Felda Medoi", then only  type "Medoi")</i></string>
+    <string name="txtViewHouseBatu"><b>What batu is the dwelling along?</b></string>
+    <string name="txtViewHouseMukim"><b>Which mukim is the dwelling in?</b></string>
+    <string name="radBtnHouseMukim_Bekok">Bekok</string>
+    <string name="radBtnHouseMukim_Chaah">Chaah</string>
+    <string name="radBtnHouseMukim_Gemereh">Gemereh</string>
+    <string name="radBtnHouseMukim_Segamat">Sg Segamat</string>
+    <string name="radBtnHouseMukim_Jabi">Jabi</string>
+
+    <!--Strings related to MapsOfflineList List-->
+    <string name="mapsoffline_title_Search2">Mukim</string>
+    <string name="doubleDot">:</string>
+    <string name="mapsoffline_btn_Search">Search</string>
+    <string name="mapsoffline_seacobarcode_title">Barcode</string>
+    <string name="mapsoffline_LatLon_title">Lat/Lon</string>
+    <string name="mapsoffline_address_title">Address</string>
+    <string name="mapsoffline_detail_title">Detail</string>
+    <string name="mapsoffline_upload_title">Upload</string>
+    <string name="mapsoffline_upload">Upload</string>
+    <string name="mapsoffline_address2_title">Address</string>
+    <string name="mapsoffline_detail">Detail</string>
+    <string name="btn_prev">prev</string>
+    <string name="btn_next">next</string>
+
+    <!--Strings related to MapsOfflineList Detail-->
+    <string name="mapsOffDetail_id_title_dialog">ID</string>
+    <string name="mapsOffDetail_barcode_title_dialog">SEACO Barcode</string>
+    <string name="mapsOffDetail_latlon_title_dialog">Latitude/Longitude</string>
+    <string name="mapsOffDetail_address_title_dialog">Address</string>
+    <string name="mapsOffDetail_address2_title_dialog">Address 2</string>
+    <string name="mapsOffDetail_createdDate_title_dialog">Created Date</string>
+    <string name="mapsOffDetail_createdBy_title_dialog">Created By</string>
+</resources>

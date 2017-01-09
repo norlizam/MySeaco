@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="1" id="1">
+	<SimpleField name="NAM" type="string"></SimpleField>
+	<SimpleField name="CAP_NAM" type="string"></SimpleField>
+	<SimpleField name="FEAT_CODE" type="string"></SimpleField>
+	<SimpleField name="ORIENTASI" type="float"></SimpleField>
+	<SimpleField name="SYM_NO" type="string"></SimpleField>
+	<SimpleField name="ENTITY" type="string"></SimpleField>
+</Schema>
+<Folder><name>1</name>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">LADANG LIM JIN ENG</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.03986723868414,28.930038961138596</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">BUKIT KANGKAR</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.0885344389055,28.963292601161818</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">BUKIT BENDAR</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.07578686656521,29.054284720673841</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH KAMPUNG TUI (FELCRA)</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.10331709375939,29.12046807960774</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">PAYA KEPAR</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.05793565782523,29.316470789142308</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH BUKIT KEPONG (FELCRA)</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.15113607918695,29.309636275406</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH PAYA KEPAR (FELCRA)</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.03035709444498,29.366654851223426</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">LADANG LABIS BAHARU</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.0684063734609,29.489677931192976</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH MA'OKIL DUA (FELDA)</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.4930541246498,28.795343131619589</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH MA'OKIL TIGA (FELDA)</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.63692018356846,28.852901340590208</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">LADANG SONG</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.15280136420614,28.924076365566187</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KAWASAN RAGUT KERBAU</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.18591379619193,28.947758200507742</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH KAMPUNG TUI (FELCRA)</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.24458150571925,29.056117111741138</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH BUKIT KEPONG (FELCRA)</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.38109703920327,29.121451967088451</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH BUKIT KEPONG (FELCRA)</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.51711949999952,29.038519878406639</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH MA'OKIL SATU (FELDA)</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.79820988507157,28.7611601580758</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KAWASAN BERKELOMPOK JALAN MUAR LABIS</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.83202644547615,29.054819175456522</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH BUKIT KEPONG (FELCRA)</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.15624287096705,29.18935228266567</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH (FELCRA) BUKIT KEPUNG PAYA KEPAR DAN KAMPUNG TUI</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.35132647292448,29.188106124981385</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH POGOH</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.3406145609606,29.395402784256117</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH (FELDA) CEMPLAK</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.5538946171348,29.166964801174515</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KEMAJUAN TANAH (FELDA) CEMPLAK BARAT</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.54897066412238,29.249235123396982</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">LADANG KINSHIP</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.69842924422085,29.223177453455165</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">LADANG VOULES</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.71204993323195,29.385044289963314</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">LADANG LABIS BAHARU</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.20374028260181,29.490547694103938</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">LADANG POGOH</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.45101463315848,29.478640288399347</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">LADANG LONDON ASIATIC</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.38114741900907,29.524826109609979</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">LADANG POGOH</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.38494207624325,29.567020504902366</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">LADANG VOULES</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.56679394222124,29.528724698873415</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">LADANG VOULES</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.75560898990815,29.466368319850986</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">LADANG SUNGAI LABIS</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.87020837528348,29.167012505753437</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">KAWASAN BERKELOMPOK CHOU</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.85930741400944,29.343010961668398</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#1">
+		<SimpleData name="NAM">LADANG BUKIT DATO</SimpleData>
+		<SimpleData name="FEAT_CODE">DA0810</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>176.88013191590079,29.491455680539385</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

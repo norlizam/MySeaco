@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
+
+        <Button
+            android:text="@string/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:id="@+id/btnSave" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/tableLayout1"
+        android:layout_below="@+id/linearLayout">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:text="@string/txtViewBarcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewBarcode" />
+
+            <TextView
+                android:text="@string/txtViewDot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTxtBarcode" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:text="@string/txtViewLat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewLat" />
+
+            <TextView
+                android:text="@string/txtViewDot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTxtLat" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:text="@string/txtViewLon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewLon" />
+
+            <TextView
+                android:text="@string/txtViewDot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTxtLon" />
+        </TableRow>
+    </TableLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tableLayout1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:text="@string/txtViewAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewAddress" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTxtAddress" />
+
+            <TextView
+                android:text="@string/txtViewHouseNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewHouseNo" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTxtHouseNo" />
+
+            <TextView
+                android:text="@string/txtViewHouseStreetType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewHouseStreetType" />
+
+            <Spinner
+                android:id="@+id/spinnerHouseStreetType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--<RadioGroup
+                android:id="@+id/radGrpHouseStreetType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+                <RadioButton
+                    android:text="@string/radBtnHouseStreetType_Jln"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radBtnHouseStreetType_Jln" />
+
+                <RadioButton
+                    android:text="@string/radBtnHouseStreetType_Lrg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radBtnHouseStreetType_Lrg" />
+
+                <RadioButton
+                    android:text="@string/radBtnHouseStreetType_NA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radBtnHouseStreetType_NA" />
+            </RadioGroup>-->
+
+            <TextView
+                android:text="@string/txtViewHouseStreetName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewHouseStreetName" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTxtHouseStreetName" />
+
+            <TextView
+                android:text="@string/txtViewHouseAreaType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewHouseAreaType" />
+
+            <Spinner
+                android:id="@+id/spinnerHouseAreaType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--<RadioGroup
+                android:id="@+id/radGrpHouseAreaType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+                <RadioButton
+                    android:text="@string/radBtnHouseAreaType_Tmn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radBtnHouseAreaType_Tmn" />
+
+                <RadioButton
+                    android:text="@string/radBtnHouseAreaType_Felda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radBtnHouseAreaType_Felda" />
+
+                <RadioButton
+                    android:text="@string/radBtnHouseAreaType_Kg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radBtnHouseAreaType_Kg" />
+
+                <RadioButton
+                    android:text="@string/radBtnHouseAreaType_NA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radBtnHouseAreaType_NA" />
+            </RadioGroup>-->
+
+            <TextView
+                android:text="@string/txtViewHouseAreaName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewHouseAreaName" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTxtHouseAreaName" />
+
+            <TextView
+                android:text="@string/txtViewHouseBatu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewHouseBatu" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTxtHouseBatu" />
+
+            <TextView
+                android:text="@string/txtViewHouseMukim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewHouseMukim" />
+
+            <Spinner
+                android:id="@+id/spinnerHouseMukim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <!--<RadioGroup
+                android:id="@+id/radGrpHouseMukim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+                <RadioButton
+                    android:text="@string/radBtnHouseMukim_Bekok"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radBtnHouseMukim_Bekok" />
+
+                <RadioButton
+                    android:text="@string/radBtnHouseMukim_Chaah"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radBtnHouseMukim_Chaah" />
+
+                <RadioButton
+                    android:text="@string/radBtnHouseMukim_Gemereh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radBtnHouseMukim_Gemereh" />
+
+                <RadioButton
+                    android:text="@string/radBtnHouseMukim_Segamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radBtnHouseMukim_Segamat" />
+
+                <RadioButton
+                    android:text="@string/radBtnHouseMukim_Jabi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radBtnHouseMukim_Jabi" />
+            </RadioGroup>-->
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

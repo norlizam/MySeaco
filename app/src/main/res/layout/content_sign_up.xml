@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="jasonpaulraj.myseaco.SignUp"
+    tools:showIn="@layout/activity_sign_up">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Signup Page"
+        android:id="@+id/txtView_signup"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/txtView_fullName"
+        android:layout_toRightOf="@+id/txtView_fullName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTxt_fullName"
+        android:layout_alignBottom="@+id/txtView_fullName"
+        android:layout_alignRight="@+id/editTxt_userPassword"
+        android:layout_alignEnd="@+id/editTxt_userPassword"
+        android:layout_toEndOf="@+id/txtView_signup"
+        android:layout_toRightOf="@+id/txtView_signup"
+        />
+
+    <!--<TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTxt_userPassword"
+        android:layout_alignTop="@+id/txtView_userPassword"
+        android:layout_alignBottom="@+id/txtView_userPassword"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#d6b1b1"
+        android:layout_toEndOf="@+id/txtView_signup"
+        android:layout_toRightOf="@+id/txtView_signup" />-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Account"
+        android:id="@+id/btn_createAccount"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/editTxt_userPassword"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/btn_back"
+        android:layout_below="@+id/btn_createAccount"
+        android:layout_alignLeft="@+id/btn_createAccount"
+        android:layout_alignStart="@+id/btn_createAccount"
+        android:layout_alignRight="@+id/editTxt_userPassword"
+        android:layout_alignEnd="@+id/editTxt_userPassword" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Password"
+        android:id="@+id/txtView_userPassword"
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/txtView_username"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/editTxt_username"
+        android:layout_alignBottom="@+id/txtView_username"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/editTxt_fullName"
+        android:layout_alignStart="@+id/editTxt_fullName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Username"
+        android:id="@+id/txtView_username"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/txtView_fullName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTxt_userPassword"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_alignBottom="@+id/txtView_userPassword"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/txtView_signup"
+        android:layout_toEndOf="@+id/txtView_signup" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Name "
+        android:id="@+id/txtView_fullName"
+        android:layout_marginTop="113dp"
+        android:layout_below="@+id/txtView_signup"
+        android:layout_alignRight="@+id/txtView_username"
+        android:layout_alignEnd="@+id/txtView_username" />
+
+</RelativeLayout>
