@@ -4,7 +4,7 @@ package jasonpaulraj.myseaco;
 public class Config {
 
     //Address of our scripts was here
-    public static final String URL_MAIN 	  					= "https://seaco-gis04.appspot.com/"; //will be replace into octopus.seaco.asia. if your are using LAN connection, please put your IP Address here
+    public static final String URL_MAIN 	  					= "https://seacogis000.appspot.com/"; //will be replace into octopus.seaco.asia. if your are using LAN connection, please put your IP Address here
     public static final String URL_ADD_USER		  	            = URL_MAIN +"db_checkInsertUser.php";
     public static final String URL_CHECK_USER 					= URL_MAIN +"db_checkUser.php";
     public static final String URL_ADD_UPDATE_LOCATION 		  	= URL_MAIN +"db_insertUpdateLocation.php";

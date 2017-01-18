@@ -23,13 +23,42 @@
         android:background="#f29191"
         android:id="@+id/linearLayout"></LinearLayout>
 
+    <TextView
+        android:text="View Maps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/imgBtnViewLoc"
+        android:layout_alignLeft="@+id/imgBtnViewLoc"
+        android:layout_alignStart="@+id/imgBtnViewLoc"
+        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp" />
+
+    <TextView
+        android:text="Add Location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_below="@+id/imgBtnAddLoc" />
+
+    <TextView
+        android:text="View List Location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView8"
+        android:layout_below="@+id/imgBtnViewList"
+        android:layout_alignRight="@+id/textView5"
+        android:layout_alignEnd="@+id/textView5" />
+
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/view_location1"
-        android:layout_marginLeft="190dp"
-        android:layout_marginStart="190dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginLeft="194dp"
+        android:layout_marginStart="194dp"
+        android:layout_marginTop="72dp"
         android:id="@+id/imgBtnViewLoc"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/linearLayout"
@@ -38,22 +67,22 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_location1"
-        android:id="@+id/imgBtnAddLoc"
-        android:layout_marginTop="47dp"
-        android:layout_below="@+id/imgBtnViewLoc"
-        android:layout_alignLeft="@+id/imgBtnViewLoc"
-        android:layout_alignStart="@+id/imgBtnViewLoc" />
+        app:srcCompat="@drawable/view_list"
+        android:id="@+id/imgBtnViewList"
+        android:layout_marginTop="86dp"
+        android:layout_below="@+id/textView5"
+        android:layout_alignLeft="@+id/imgBtnAddLoc"
+        android:layout_alignStart="@+id/imgBtnAddLoc" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/view_list"
-        android:id="@+id/imgBtnViewList"
-        android:layout_marginTop="80dp"
-        android:layout_below="@+id/imgBtnAddLoc"
-        android:layout_alignLeft="@+id/imgBtnAddLoc"
-        android:layout_alignStart="@+id/imgBtnAddLoc" />
+        app:srcCompat="@drawable/add_location1"
+        android:id="@+id/imgBtnAddLoc"
+        android:layout_marginTop="77dp"
+        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/imgBtnViewLoc"
+        android:layout_alignStart="@+id/imgBtnViewLoc" />
 
     <!--<Button
         android:layout_width="fill_parent"
