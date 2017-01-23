@@ -144,6 +144,7 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setCompassEnabled(true);
         mMap.getUiSettings().setAllGesturesEnabled(true);
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
         //STEP GET CURRENT LOCATION 5: start permission get current location
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
