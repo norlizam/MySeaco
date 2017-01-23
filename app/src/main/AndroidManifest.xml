@@ -76,6 +76,12 @@
             android:name=".MapsOnlineList"
             android:label="Edit Map">
         </activity>
+        <activity
+            android:name=".ViewMapsOnlineList"
+            android:label="View Map"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>

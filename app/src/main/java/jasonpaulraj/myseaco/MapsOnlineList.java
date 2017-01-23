@@ -3,6 +3,7 @@ package jasonpaulraj.myseaco;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -323,7 +324,7 @@ public class MapsOnlineList extends Activity implements View.OnClickListener {
                 //click on detail image
                 detail(mapsId, mapsBarcode, mapsLatitude, mapsLongitude, mapsAddress, mapsFullAddress2, mapHouseCreatedDate, mapInsertBy,
                         mapsHouseNo, mapsHouseStreetType, mapsHouseStreetName, mapsHouseAreaType, mapsHouseAreaName, mapsHouseBatu, mapsHouseMukim,
-                        mapsModifiedBy, mapsOffline_detail);
+                        mapsModifiedBy, mapsOffline_detail, mapsOffline_latLon);
 
                 i++;
                 tableLayout.addView(linearLayout);
@@ -336,12 +337,27 @@ public class MapsOnlineList extends Activity implements View.OnClickListener {
     //start function on click detail and click upload
     public void detail(final String mapsId, final String mapsBarcode, final String mapsLatitude, final String mapsLongitude, final String mapsAddress, final String mapsFullAddress2, final String mapHouseCreatedDate, final String mapInsertBy,
                               final String mapsHouseNo, final String mapsHouseStreetType, final String mapsHouseStreetName, final String mapsHouseAreaType, final String mapsHouseAreaName, final String mapsHouseBatu, final String mapsHouseMukim,
-                              final String mapsModifiedBy, Button mapsOffline_detail){
+                              final String mapsModifiedBy, Button mapsOffline_detail, TextView mapsOffline_latLon){
         //click on detail image
         mapsOffline_detail.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.d(TAG,"i["+mapsId+"]");
                 informationDetail(mapsId, mapsBarcode, mapsLatitude, mapsLongitude, mapsAddress, mapsFullAddress2, mapHouseCreatedDate, mapInsertBy);
+            }
+        });
+
+        //click on detail image
+        mapsOffline_latLon.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.d(TAG,"Test onClick Textview: i["+mapsId+"]");
+                Intent intent = new Intent(MapsOnlineList.this, ViewMapsOnlineList.class);
+                intent.putExtra("lat", mapsLatitude);
+                intent.putExtra("lng", mapsLongitude);
+                intent.putExtra("address1", mapsAddress);
+                intent.putExtra("address2", mapsFullAddress2);
+                intent.putExtra("barcode", mapsBarcode);
+                startActivity(intent);
+                //informationDetail(mapsId, mapsBarcode, mapsLatitude, mapsLongitude, mapsAddress, mapsFullAddress2, mapHouseCreatedDate, mapInsertBy);
             }
         });
     }
