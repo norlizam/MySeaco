@@ -35,14 +35,6 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/view_location1"
-        android:id="@+id/imgBtnViewLoc"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:srcCompat="@drawable/view_list"
         android:id="@+id/imgBtnViewList"
         android:layout_below="@+id/textView5"
@@ -76,6 +68,14 @@
         android:layout_below="@+id/textView4"
         android:layout_alignLeft="@+id/imgBtnViewLoc"
         android:layout_alignStart="@+id/imgBtnViewLoc" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/view_location1"
+        android:id="@+id/imgBtnViewLoc"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <!--<Button
         android:layout_width="fill_parent"

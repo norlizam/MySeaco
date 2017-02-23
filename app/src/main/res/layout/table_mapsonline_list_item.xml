@@ -37,12 +37,12 @@
                 android:textColor="@color/wallet_holo_blue_light"/>
 
             <TextView
-            android:id="@+id/mapsoffline_address"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
-            android:layout_margin="1dip"
-            android:background="#ffffff"
-            android:padding="5dip" />
+                android:id="@+id/mapsoffline_address"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dip"
+                android:background="#ffffff"
+                android:padding="5dip" />
 
             <TextView
                 android:id="@+id/mapsoffline_address2"
@@ -52,16 +52,35 @@
                 android:background="#ffffff"
                 android:padding="5dip" />
 
-            <Button
-                android:id="@+id/mapsoffline_detail"
-                style="?android:attr/buttonStyleSmall"
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="10dp"
-                android:layout_height="match_parent"
-                android:layout_margin="1dip"
-                android:background="#ACA899"
-                android:gravity="center"
-                android:padding="5dip"
-                android:text="@string/mapsoffline_detail"/>
+                android:layout_height="match_parent">
+
+                <Button
+                    android:text="@string/mapsoffline_detail"
+                    android:id="@+id/mapsoffline_detail"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dip"
+                    android:background="#ACA899"
+                    android:gravity="center"
+                    android:padding="5dip"/>
+
+                <Button
+
+                    android:text="@string/mapsoffline_delete"
+                    android:id="@+id/mapsoffline_delete"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dip"
+                    android:background="#ACA899"
+                    android:gravity="center"
+                    android:padding="5dip"
+                    />
+            </LinearLayout>
 
         </TableRow>
     </TableLayout>

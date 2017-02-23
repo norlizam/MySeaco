@@ -145,6 +145,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.getUiSettings().setCompassEnabled(true);
         mMap.getUiSettings().setAllGesturesEnabled(true);
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        //mMap.isBuildingsEnabled();
 
         //STEP GET CURRENT LOCATION 5: start permission get current location
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -1451,7 +1452,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             Log.d(TAG, "ENTER CURRENT LOCATION 3");
             LatLng currentLoc = new LatLng(location.getLatitude(), location.getLongitude());
             // mMap.addMarker(new MarkerOptions().position(currentLoc).title("Current Location"));
-            float zoomLevel = 16; //This goes up to 21
+            float zoomLevel = 20; //This goes up to 21
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLoc, zoomLevel));
         }
 

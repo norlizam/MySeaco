@@ -102,7 +102,7 @@ public class ViewMapsOnlineList extends FragmentActivity implements OnMapReadyCa
         Log.d(TAG,"LATITUDE double ["+latDouble+" AND LONGITUDE double["+lngDouble+"]");
 
         LatLng locationPerRow = new LatLng(latDouble,lngDouble);
-        CameraUpdate cameraPosition = CameraUpdateFactory.newLatLngZoom(locationPerRow, 15);
+        CameraUpdate cameraPosition = CameraUpdateFactory.newLatLngZoom(locationPerRow, 20);
         mMap.moveCamera(cameraPosition);
         mMap.animateCamera(cameraPosition);
         //end focus on the selected location

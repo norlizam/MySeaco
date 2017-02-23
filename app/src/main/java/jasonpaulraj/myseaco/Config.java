@@ -14,6 +14,7 @@ public class Config {
     public static final String URL_ADD_LOCATION		  	        = URL_MAIN +"db_insertLocation.php";
     public static final String URL_ALL_LOCATION_PERUSER	  	    = URL_MAIN +"db_getAllLocationPerUser.php";
     public static final String URL_ALL_LOCATION_PERUSER_PAGE	= URL_MAIN +"db_getAllLocationPerUserCount.php";
+    public static final String URL_DELETE_LOCATION	            = URL_MAIN +"db_deleteLocation.php";
 
     //Keys that will be used to send the request to php scripts
     public static final String KEY_USER_ID = "userId";

@@ -86,6 +86,7 @@
     <string name="mapsoffline_upload">Upload</string>
     <string name="mapsoffline_address2_title">Address</string>
     <string name="mapsoffline_detail">Detail</string>
+    <string name="mapsoffline_delete">Delete</string>
     <string name="btn_prev">prev</string>
     <string name="btn_next">next</string>
 

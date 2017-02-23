@@ -1,8 +1,11 @@
 package jasonpaulraj.myseaco;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -111,7 +114,6 @@ public class MapsOnlineList extends Activity implements View.OnClickListener {
                 currentPage = getCurrentPage(action);
                 getJSON(subValues, currentPage);
                 getTotalPage(subValues, currentPage);
-
             }
         });
 
@@ -313,6 +315,7 @@ public class MapsOnlineList extends Activity implements View.OnClickListener {
                 TextView mapsOffline_address1  = (TextView) linearLayout.findViewById(R.id.mapsoffline_address);
                 TextView mapsOffline_address2  = (TextView) linearLayout.findViewById(R.id.mapsoffline_address2);
                 Button mapsOffline_detail  = (Button) linearLayout.findViewById(R.id.mapsoffline_detail);
+                Button mapsoffline_delete  = (Button) linearLayout.findViewById(R.id.mapsoffline_delete);
 
                 mapsOffline_seacoBarcode.setText(mapsBarcode);
                 mapsOffline_latLon.setText(mapsLatitude+","+mapsLongitude);
@@ -322,9 +325,9 @@ public class MapsOnlineList extends Activity implements View.OnClickListener {
                 Log.d(TAG,"mapsId["+mapsId+"]");
 
                 //click on detail image
-                detail(mapsId, mapsBarcode, mapsLatitude, mapsLongitude, mapsAddress, mapsFullAddress2, mapHouseCreatedDate, mapInsertBy,
+                detailnDelete(mapsId, mapsBarcode, mapsLatitude, mapsLongitude, mapsAddress, mapsFullAddress2, mapHouseCreatedDate, mapInsertBy,
                         mapsHouseNo, mapsHouseStreetType, mapsHouseStreetName, mapsHouseAreaType, mapsHouseAreaName, mapsHouseBatu, mapsHouseMukim,
-                        mapsModifiedBy, mapsOffline_detail, mapsOffline_latLon);
+                        mapsModifiedBy, mapsOffline_detail, mapsoffline_delete, mapsOffline_latLon);
 
                 i++;
                 tableLayout.addView(linearLayout);
@@ -335,14 +338,66 @@ public class MapsOnlineList extends Activity implements View.OnClickListener {
     }
 
     //start function on click detail and click upload
-    public void detail(final String mapsId, final String mapsBarcode, final String mapsLatitude, final String mapsLongitude, final String mapsAddress, final String mapsFullAddress2, final String mapHouseCreatedDate, final String mapInsertBy,
+    public void detailnDelete(final String mapsId, final String mapsBarcode, final String mapsLatitude, final String mapsLongitude, final String mapsAddress, final String mapsFullAddress2, final String mapHouseCreatedDate, final String mapInsertBy,
                               final String mapsHouseNo, final String mapsHouseStreetType, final String mapsHouseStreetName, final String mapsHouseAreaType, final String mapsHouseAreaName, final String mapsHouseBatu, final String mapsHouseMukim,
-                              final String mapsModifiedBy, Button mapsOffline_detail, TextView mapsOffline_latLon){
+                              final String mapsModifiedBy, Button mapsOffline_detail, Button mapsoffline_delete, TextView mapsOffline_latLon){
         //click on detail image
         mapsOffline_detail.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.d(TAG,"i["+mapsId+"]");
                 informationDetail(mapsId, mapsBarcode, mapsLatitude, mapsLongitude, mapsAddress, mapsFullAddress2, mapHouseCreatedDate, mapInsertBy);
+            }
+        });
+
+        //click on delete image
+        mapsoffline_delete.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.d(TAG,"delete["+mapsId+"]");
+
+                //start popup confirmation delete appear
+
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case DialogInterface.BUTTON_POSITIVE:
+                                //start Yes button clicked
+                                final ProgressDialog progressDialog = new ProgressDialog(MapsOnlineList.this);
+                                progressDialog.setIndeterminate(true);
+                                progressDialog.setMessage("Saving...");
+                                progressDialog.show();
+
+                                new android.os.Handler().postDelayed(
+                                        new Runnable() {
+                                            public void run() {
+                                                //do delete here
+                                                deleteLocation(mapsId, progressDialog);
+
+                                                //first time load
+                                                currentPage = getCurrentPage(action);
+                                                subValues = "0";
+                                                getJSON(subValues, currentPage);
+                                                getTotalPage(subValues, currentPage);
+                                                //end first time load
+
+                                            }
+
+
+                                        }, 3000);
+                                break;
+
+                            case DialogInterface.BUTTON_NEGATIVE:
+                                //Nothing run
+                                Log.d(TAG,"CANCEL");
+                                break;
+                        }
+                    }
+                };
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MapsOnlineList.this);
+                builder.setMessage("Are you sure want to delete this record?").setPositiveButton("Yes", dialogClickListener)
+                        .setNegativeButton("No", dialogClickListener).show();
+               //end popup confirmation delete appear
             }
         });
 
@@ -357,7 +412,6 @@ public class MapsOnlineList extends Activity implements View.OnClickListener {
                 intent.putExtra("address2", mapsFullAddress2);
                 intent.putExtra("barcode", mapsBarcode);
                 startActivity(intent);
-                //informationDetail(mapsId, mapsBarcode, mapsLatitude, mapsLongitude, mapsAddress, mapsFullAddress2, mapHouseCreatedDate, mapInsertBy);
             }
         });
     }
@@ -417,6 +471,47 @@ public class MapsOnlineList extends Activity implements View.OnClickListener {
             subValue = selected;
         }
         return subValue;
+    }
+
+    //Delete Location Record
+    private void deleteLocation(final String id, final ProgressDialog progressDialog){
+
+        class DeleteLocation extends AsyncTask<Void,Void,String>{
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+
+                Log.d(TAG,"onPostExecute addDuplicate");
+
+                progressDialog.setMessage("Delete Succesfully");
+                progressDialog.dismiss();
+
+            }
+
+            @Override
+            protected String doInBackground(Void... v) {
+
+                Log.d(TAG,"doInBackground addDuplicate");
+
+                HashMap<String,String> params = new HashMap<String, String>();
+                params.put(Config.KEY_ID,id);
+
+                Log.d(TAG,"DELETE ID["+id+"]");
+
+                RequestHandler rh = new RequestHandler();
+                String res = rh.sendPostRequest(Config.URL_DELETE_LOCATION, params);
+                return res;
+            }
+        }
+
+        DeleteLocation deleteLocation = new DeleteLocation();
+        deleteLocation.execute();
     }
 
 }

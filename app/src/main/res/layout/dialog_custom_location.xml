@@ -117,7 +117,7 @@
 
             <TextView
                 android:text="@string/txtViewHouseNo"
-                android:layout_width="match_parent"
+                android:layout_width="956dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtViewHouseNo" />
 
