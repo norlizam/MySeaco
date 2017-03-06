@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Address:"
+        android:text="Address GPS:"
         android:id="@+id/address" />
 
     <TextView
@@ -28,7 +28,7 @@
         android:id="@+id/aView" />
 
     <TextView
-        android:text="Address II:"
+        android:text="Address SEACO:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/address2" />

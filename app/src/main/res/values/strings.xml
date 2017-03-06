@@ -44,7 +44,7 @@
     <string name="txtViewBarcode"><b>SEACO Barcode</b></string>
     <string name="txtViewLat"><b>Latitude</b></string>
     <string name="txtViewLon"><b>Longitude</b></string>
-    <string name="txtViewAddress"><b>Address</b></string>
+    <string name="txtViewAddress"><b>Address GPS</b></string>
     <string name="txtViewDot"><b>:</b></string>
     <string name="btnSave">Save</string>
     <string name="btnEdit">Edit</string>
@@ -80,22 +80,26 @@
     <string name="mapsoffline_btn_Search">Search</string>
     <string name="mapsoffline_seacobarcode_title">Barcode</string>
     <string name="mapsoffline_LatLon_title">Lat/Lon</string>
-    <string name="mapsoffline_address_title">Address</string>
+    <string name="mapsoffline_address_title">Address SEACO</string>
+    <string name="mapsoffline_address1_title">Address GPS</string>
     <string name="mapsoffline_detail_title">Detail</string>
     <string name="mapsoffline_upload_title">Upload</string>
     <string name="mapsoffline_upload">Upload</string>
-    <string name="mapsoffline_address2_title">Address</string>
+    <string name="mapsoffline_address2_title">Address SEACO</string>
     <string name="mapsoffline_detail">Detail</string>
     <string name="mapsoffline_delete">Delete</string>
     <string name="btn_prev">prev</string>
     <string name="btn_next">next</string>
 
+    <string name="mapsonline_date_title">Date</string>
+    <string name="mapsonline_address_title">Address SEACO</string>
+
     <!--Strings related to MapsOfflineList Detail-->
     <string name="mapsOffDetail_id_title_dialog">ID</string>
     <string name="mapsOffDetail_barcode_title_dialog">SEACO Barcode</string>
     <string name="mapsOffDetail_latlon_title_dialog">Latitude/Longitude</string>
-    <string name="mapsOffDetail_address_title_dialog">Address</string>
-    <string name="mapsOffDetail_address2_title_dialog">Address 2</string>
+    <string name="mapsOffDetail_address_title_dialog">Address GPS</string>
+    <string name="mapsOffDetail_address2_title_dialog">Address SEACO</string>
     <string name="mapsOffDetail_createdDate_title_dialog">Created Date</string>
     <string name="mapsOffDetail_createdBy_title_dialog">Created By</string>
 </resources>

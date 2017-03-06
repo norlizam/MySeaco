@@ -954,6 +954,25 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
                 params.put(Config.KEY_ADDRESS2_MODIFIEDBY,mapsModifiedBy);
                 params.put(Config.KEY_ISEDIT,isEdit);
 
+                Log.d(TAG,"id: ["+String.valueOf(id)+"]");
+                Log.d(TAG,"mapsBarcode: ["+mapsBarcode+"]");
+                Log.d(TAG,"mapsLatitude: ["+mapsLatitude+"]");
+                Log.d(TAG,"mapsLongitude: ["+mapsLongitude+"]");
+                Log.d(TAG,"mapsAddress: ["+mapsAddress+"]");
+                Log.d(TAG,"mapsFullAddress2: ["+mapsFullAddress2+"]");
+                Log.d(TAG,"mapsHouseNo: ["+mapsHouseNo+"]");
+                Log.d(TAG,"mapsHouseStreetType: ["+mapsHouseStreetType+"]");
+                Log.d(TAG,"mapsHouseStreetName: ["+mapsHouseStreetName+"]");
+                Log.d(TAG,"mapsHouseAreaType: ["+mapsHouseAreaType+"]");
+                Log.d(TAG,"mapsHouseAreaName: ["+mapsHouseAreaName+"]");
+                Log.d(TAG,"mapsHouseBatu: ["+mapsHouseBatu+"]");
+                Log.d(TAG,"mapsHouseMukim: ["+mapsHouseMukim+"]");
+                Log.d(TAG,"createdBy: ["+mapInsertBy+"]");
+                Log.d(TAG,"isEdit: ["+isEdit+"]");
+
+
+
+
                 RequestHandler rh = new RequestHandler();
                 String s = rh.sendPostRequest(Config.URL_ADD_UPDATE_LOCATION, params);
                 return s;

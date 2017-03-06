@@ -345,7 +345,17 @@ public class MapsOnlineList extends Activity implements View.OnClickListener {
         mapsOffline_detail.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.d(TAG,"i["+mapsId+"]");
-                informationDetail(mapsId, mapsBarcode, mapsLatitude, mapsLongitude, mapsAddress, mapsFullAddress2, mapHouseCreatedDate, mapInsertBy);
+                Intent intent = new Intent(MapsOnlineList.this, MapsOnlineListDetail.class);
+                intent.putExtra("mapsId", mapsId);
+                intent.putExtra("mapsBarcode", mapsBarcode);
+                intent.putExtra("mapsLatitude", mapsLatitude);
+                intent.putExtra("mapsLongitude", mapsLongitude);
+                intent.putExtra("mapsAddress", mapsAddress);
+                intent.putExtra("mapsFullAddress2", mapsFullAddress2);
+                intent.putExtra("mapHouseCreatedDate", mapHouseCreatedDate);
+                intent.putExtra("mapInsertBy", mapInsertBy);
+                startActivity(intent);
+                //informationDetail(mapsId, mapsBarcode, mapsLatitude, mapsLongitude, mapsAddress, mapsFullAddress2, mapHouseCreatedDate, mapInsertBy);
             }
         });
 
@@ -420,7 +430,13 @@ public class MapsOnlineList extends Activity implements View.OnClickListener {
     //start display information detail
     public void informationDetail(String id, String mapsBarcode, String mapsLatitude, String mapsLongitude, String mapsAddress, String mapsFullAddress2, String mapHouseCreatedDate, String mapInsertBy){
 
-        // custom dialog
+        Intent intent = new Intent(MapsOnlineList.this, MapsOnlineListDetail.class);
+        intent.putExtra("userID", id);
+        intent.putExtra("userRegtype", mapsBarcode);
+        intent.putExtra("radModeType", radModeType);
+        startActivity(intent);
+
+       /* // custom dialog
         final Dialog dialog = new Dialog(MapsOnlineList.this);
         dialog.setContentView(R.layout.dialog_custom_detail);
         dialog.setTitle("Detail Information");
@@ -441,7 +457,7 @@ public class MapsOnlineList extends Activity implements View.OnClickListener {
         mapsOffline_address2_dialog.setText(mapsAddress);
         mapsOffline_createDate_dialog.setText(mapHouseCreatedDate);
         mapsOffline_createBy_dialog.setText(mapInsertBy);
-        dialog.show();
+        dialog.show();*/
 
     }
     //end display information detail

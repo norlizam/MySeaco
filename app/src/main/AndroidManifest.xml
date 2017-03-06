@@ -80,7 +80,11 @@
             android:name=".ViewMapsOnlineList"
             android:label="View Map"
             android:theme="@style/AppTheme.NoActionBar">
-
+        </activity>
+        <activity
+            android:name=".MapsOnlineListDetail"
+            android:label="View Map Detail"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

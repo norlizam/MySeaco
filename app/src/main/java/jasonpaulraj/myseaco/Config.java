@@ -14,6 +14,8 @@ public class Config {
     public static final String URL_ADD_LOCATION		  	        = URL_MAIN +"db_insertLocation.php";
     public static final String URL_ALL_LOCATION_PERUSER	  	    = URL_MAIN +"db_getAllLocationPerUser.php";
     public static final String URL_ALL_LOCATION_PERUSER_PAGE	= URL_MAIN +"db_getAllLocationPerUserCount.php";
+    public static final String URL_ALL_LOCATION_DETAIL  	    = URL_MAIN +"db_getAllLocationPerDetail.php";
+    public static final String URL_ALL_LOCATION_DETAIL_PAGE  	= URL_MAIN +"db_getAllLocationPerDetailCount.php";
     public static final String URL_DELETE_LOCATION	            = URL_MAIN +"db_deleteLocation.php";
 
     //Keys that will be used to send the request to php scripts
@@ -50,6 +52,7 @@ public class Config {
     public static final String TAG_JSON_ARRAY="result";
     public static final String TAG_BARCODE = "seaco_barcode";
     public static final String TAG_ID = "id";
+    public static final String TAG_ID_HISTORY = "id_history";
     public static final String TAG_LATITUDE = "latitude";
     public static final String TAG_LONGITUDE = "longitude";
     public static final String TAG_ADDRESS1 = "address1";

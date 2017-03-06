@@ -323,7 +323,7 @@ public class MapsOfflineList extends Activity implements View.OnClickListener {
 
         // custom dialog
         final Dialog dialog = new Dialog(MapsOfflineList.this);
-        dialog.setContentView(R.layout.dialog_custom_detail);
+        dialog.setContentView(R.layout.dialog_custom_details);
         dialog.setTitle("Detail Information");
 
         // set the custom dialog components - text, image and button

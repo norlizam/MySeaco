@@ -6,8 +6,11 @@
     <ScrollView
         android:id="@+id/scrollViewTableLayoutDetail"
         android:layout_width="fill_parent"
-        android:layout_height="250dp"
-        android:fillViewport="true">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <TableLayout
             android:id="@+id/tableLayoutDetail"
@@ -250,97 +253,5 @@
             </TableRow>
         </TableLayout>
     </ScrollView>
-
-    <TableLayout
-        android:id="@+id/tableLayoutTitle"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@+id/scrollViewTableLayoutDetail"
-        android:background="#800000"
-        android:scrollbars="vertical"
-        android:stretchColumns="*">
-
-        <TableRow
-            android:id="@+id/tableRowTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="1dip">
-
-            <TextView
-                android:id="@+id/mapsonline_date_title"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:layout_margin="1dip"
-                android:background="#808080"
-                android:gravity="center"
-                android:padding="3dip"
-                android:text="@string/mapsonline_date_title"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/mapsonline_address_title"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_margin="1dip"
-                android:background="#808080"
-                android:gravity="center"
-                android:lines="2"
-                android:padding="3dip"
-                android:text="@string/mapsonline_address_title"
-                android:textStyle="bold" />
-        </TableRow>
-
-    </TableLayout>
-
-    <ScrollView
-        android:id="@+id/scrollViewTableLayoutEdit"
-        android:layout_width="fill_parent"
-        android:layout_height="1000dp"
-        android:layout_above="@+id/linearLayoutBottom"
-        android:layout_below="@+id/tableLayoutTitle"
-        android:fillViewport="true">
-
-        <TableLayout
-            android:id="@+id/tableLayoutEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#800000"
-            android:scrollbars="vertical"
-            android:stretchColumns="*"></TableLayout>
-    </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutBottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@android:color/black">
-
-        <Button
-            android:id="@+id/buttonPrevious"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:text="@string/btn_prev" />
-
-        <TextView
-            android:id="@+id/pageNumber"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:background="@android:color/darker_gray"
-            android:gravity="center"
-            android:padding="10dp"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/buttonNext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:text="@string/btn_next" />
-    </LinearLayout>
 
 </RelativeLayout>
