@@ -73,6 +73,7 @@
     <string name="radBtnHouseMukim_Gemereh">Gemereh</string>
     <string name="radBtnHouseMukim_Segamat">Sg Segamat</string>
     <string name="radBtnHouseMukim_Jabi">Jabi</string>
+    <string name="txtViewStatus">Status</string>
 
     <!--Strings related to MapsOfflineList List-->
     <string name="mapsoffline_title_Search2">Mukim</string>

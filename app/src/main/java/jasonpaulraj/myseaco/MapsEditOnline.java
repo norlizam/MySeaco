@@ -39,6 +39,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -92,20 +93,27 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
     private GoogleApiClient client;
 
     Context context;
-    Spinner spinnerHouseStreetType, spinnerHouseAreaType, spinnerHouseMukim;
+    Spinner spinnerHouseStreetType, spinnerHouseAreaType, spinnerHouseMukim, spinnerHouseStatus;
 
     EditText editTxtBarcode, editTxtLat, editTxtLon, editTxtAddress, editTxtHouseNo, editTxtHouseStreetName, editTxtHouseAreaName, editTxtHouseBatu;
     RadioGroup radGrpHouseStreetType, radGrpHouseAreaType, radGrpHouseMukim;
     RadioButton radBtnHouseStreetType_Jln, radBtnHouseStreetType_Lrg, radBtnHouseStreetType_NA, radBtnHouseAreaType_Tmn, radBtnHouseAreaType_Kg, radBtnHouseAreaType_Felda,
             radBtnHouseAreaType_NA, radBtnHouseMukim_Bekok, radBtnHouseMukim_Chaah, radBtnHouseMukim_Gemereh, radBtnHouseMukim_Segamat, radBtnHouseMukim_Jabi;
     Button btnSave;
+    TextView txtViewStatus;
     String mapsBarcode, mapsLatitude, mapsLongitude, mapsAddress, mapsHouseNo, mapsHouseStreetType, mapsHouseStreetName, mapsHouseAreaType, mapsHouseAreaName,
-            mapsHouseBatu, mapsHouseMukim, mapsFullAddress2, mapInsertBy,mapsModifiedBy, checkLatLonIsExist, isEdit, id, barcode, fullAddress, fullAddress2, address2_no, address2_streetType,
-            address2_streetName, address2_areaType, address2_areaName, address2_batu, address2_mukim, checkLatLonNotDup,  testLatitude, testLongitude, userID, userRegtype, radModeType;
+            mapsHouseBatu, mapsHouseMukim, mapsFullAddress2, mapInsertBy,mapsModifiedBy, mapsHouseStatus, checkLatLonIsExist, isEdit, id, barcode, fullAddress, fullAddress2, address2_no, address2_streetType,
+            address2_streetName, address2_areaType, address2_areaName, address2_batu, address2_mukim, checkLatLonNotDup,  testLatitude, testLongitude, userID, userRegtype, radModeType, status;
 
 
     private static final long MINIMUM_DISTANCE_CHANGE_FOR_UPDATES = 1; // in Meters
     private static final long MINIMUM_TIME_BETWEEN_UPDATES = 1000; // in Milliseconds
+
+    public static final float HUE_GREEN = 120; //Agree
+    public static final float HUE_RED = 0; //Reject
+    public static final float HUE_YELLOW =  60; //empty
+    public static final float HUE_CYAN = 180; //New
+    public static final float HUE_VIOLET = 270; //Not at home
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -262,7 +270,7 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
                         Log.d(TAG,"address["+address11+"]");
                         Log.d(TAG,"address["+city+"]");
 
-                        viewEditDialog(id, barcode, latitude, longitude, fullAddress, address2_no, address2_streetType, address2_streetName, address2_areaType, address2_areaName, address2_batu, address2_mukim, isEdit);
+                        viewEditDialog(id, barcode, latitude, longitude, fullAddress, address2_no, address2_streetType, address2_streetName, address2_areaType, address2_areaName, address2_batu, address2_mukim, isEdit, status);
                     }
                 }
                 catch (IOException e) {
@@ -299,7 +307,7 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
 
     //view edit maps dialog
     public void viewEditDialog(final int id, String barcode, String latitude, String longitude, String fullAddress, String address2_no, String address2_streetType,
-                               String address2_streetName, String address2_areaType, String address2_areaName, String address2_batu, String address2_mukim, final String isEdit){
+                               String address2_streetName, String address2_areaType, String address2_areaName, String address2_batu, String address2_mukim, final String isEdit, String status){
 
         // custom dialog
         final Dialog dialog = new Dialog(MapsEditOnline.this);
@@ -318,21 +326,27 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
         editTxtHouseBatu = (EditText) dialog.findViewById(R.id.editTxtHouseBatu);
         mapsFullAddress2 ="";
         editTxtAddress.setEnabled(false);
+        txtViewStatus = (TextView) dialog.findViewById(R.id.txtViewStatus);
 
         spinnerHouseStreetType = (Spinner) dialog.findViewById(R.id.spinnerHouseStreetType);
         spinnerHouseAreaType = (Spinner) dialog.findViewById(R.id.spinnerHouseAreaType);
         spinnerHouseMukim = (Spinner) dialog.findViewById(R.id.spinnerHouseMukim);
+        spinnerHouseStatus = (Spinner) dialog.findViewById(R.id.spinnerStatus);
 
-        spinnerHouseStreetType = (Spinner) dialog.findViewById(R.id.spinnerHouseStreetType);
-        spinnerHouseAreaType = (Spinner) dialog.findViewById(R.id.spinnerHouseAreaType);
-        spinnerHouseMukim = (Spinner) dialog.findViewById(R.id.spinnerHouseMukim);
-
+        if(isEdit.equals("N")){
+            //set invisible
+            txtViewStatus.setVisibility(View.GONE);
+            spinnerHouseStatus.setVisibility(View.GONE);
+        }else{
+            //start spinner
+            getStatusList();
+            //end spinner
+        }
 
         //start spinner
         getStreetTypeList();
         getAreaTypeList();
         getMukimList();
-        //end spinner
 
         //start spinner listener
         spinnerHouseStreetType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -394,6 +408,27 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
             }
 
         });
+
+        //start spinner listener
+        spinnerHouseStatus.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                mapsHouseStatus = parent.getItemAtPosition(position).toString();
+
+                //set parameter in value type
+                Log.d(TAG,"mapsHouseStatus Listener: ["+mapsHouseStatus+"]");
+                //subValues = getParamSubValue(selected);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
+            }
+
+        });
         //end spinner listener
 
         btnSave = (Button) dialog.findViewById(R.id.btnSave);
@@ -404,6 +439,7 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
             editTxtBarcode.setText("");
             mapInsertBy = userID; //temporary hardcoded
             mapsModifiedBy ="";
+            mapsHouseStatus = "New";
 
         }else{
 
@@ -432,11 +468,18 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
             spinnerHouseMukim.setSelection(spinnerMukimPosition);
             //end set spinner the default according to value
 
+            ArrayAdapter myAdapStatus = (ArrayAdapter) spinnerHouseStatus.getAdapter(); //cast to an ArrayAdapter
+            int spinnerHouseStatusPosition = myAdapStatus.getPosition(status);
+            spinnerHouseStatus.setSelection(spinnerHouseStatusPosition);
+            //end set spinner the default according to value
+
             mapsFullAddress2 ="";
 
             mapsModifiedBy = userID;
 
             mapInsertBy = "";
+
+            mapsHouseStatus = status;
 
         }
 
@@ -474,7 +517,7 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
 
                 Log.d(TAG,"isEdit: ["+isEdit+"] ID: ["+id+"] barcode: ["+mapsBarcode+"] latitude: ["+mapsLatitude+"] longitude: ["+mapsLongitude+"] streetType: ["+mapsHouseStreetType+"] " +
                         "streetName:["+mapsHouseStreetName+"] areaType: ["+mapsHouseAreaType+"] areaName: ["+mapsHouseAreaName+"] batu: ["+mapsHouseBatu+"] mukim: ["+mapsHouseMukim+"] address1: ["+mapsAddress+"] address2: ["+mapsFullAddress2+"] " +
-                        "createdBy["+mapInsertBy+"] modifiedBy ["+mapsModifiedBy+"]");
+                        "createdBy["+mapInsertBy+"] modifiedBy ["+mapsModifiedBy+"] mapsHouseStatus["+mapsHouseStatus+"]");
 
                 //start set progress dialog
                 final ProgressDialog progressDialog = new ProgressDialog(MapsEditOnline.this);
@@ -487,7 +530,7 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
                             public void run() {
                                 checkNSavePoints(isEdit, id, mapsBarcode,  mapsLatitude,mapsLongitude, mapsAddress,
                                         mapsHouseNo, mapsHouseStreetType, mapsHouseStreetName, mapsHouseAreaType, mapsHouseAreaName, mapsHouseBatu, mapsHouseMukim, mapsFullAddress2,
-                                        mapInsertBy, mapsModifiedBy, progressDialog, dialog);
+                                        mapInsertBy, mapsModifiedBy, mapsHouseStatus, progressDialog, dialog);
 
                             }
                         }, 3000);
@@ -870,7 +913,7 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
     //STEP 2: retrieve and edit points - checking duplicate and save / update
     private void checkNSavePoints(final String isEdit, final int id, final String mapsBarcode, final String mapsLatitude, final String mapsLongitude, final String mapsAddress,
                                   final String mapsHouseNo, final String mapsHouseStreetType, final String mapsHouseStreetName, final String mapsHouseAreaType, final String mapsHouseAreaName, final String mapsHouseBatu, final String mapsHouseMukim, final String mapsFullAddress2,
-                                  final String mapInsertBy, final String mapsModifiedBy, final ProgressDialog progressDialog, final Dialog dialog){
+                                  final String mapInsertBy, final String mapsModifiedBy, final String mapsHouseStatus, final ProgressDialog progressDialog, final Dialog dialog){
 
         class CheckNSavePoints extends AsyncTask<Void,Void,String>{
 
@@ -894,7 +937,7 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
                     JSONArray gisInfoList = jsonObject
                             .getJSONArray(Config.TAG_JSON_ARRAY);
 
-                    //Log.d(TAG,"checkNSavePoints@@@@ InfoList Size: ["+gisInfoList.length()+"] latitude: ["+mapsLatitude+"] longitude: ["+mapsLongitude+"]");
+                    Log.d(TAG,"checkNSavePoints@@@@ InfoList Size: ["+gisInfoList.length()+"] latitude: ["+mapsLatitude+"] longitude: ["+mapsLongitude+"] mapsHouseStatus["+mapsHouseStatus+"]");
 
 
                     for(int i=0;i<gisInfoList.length();i++){
@@ -952,6 +995,7 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
                 params.put(Config.KEY_ADDRESS2_MUKIM,mapsHouseMukim);
                 params.put(Config.KEY_ADDRESS2_CREATEDBY,mapInsertBy);
                 params.put(Config.KEY_ADDRESS2_MODIFIEDBY,mapsModifiedBy);
+                params.put(Config.KEY_STATUS,mapsHouseStatus);
                 params.put(Config.KEY_ISEDIT,isEdit);
 
                 Log.d(TAG,"id: ["+String.valueOf(id)+"]");
@@ -968,9 +1012,8 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
                 Log.d(TAG,"mapsHouseBatu: ["+mapsHouseBatu+"]");
                 Log.d(TAG,"mapsHouseMukim: ["+mapsHouseMukim+"]");
                 Log.d(TAG,"createdBy: ["+mapInsertBy+"]");
+                Log.d(TAG,"ismapsHouseStatusEdit: ["+mapsHouseStatus+"]");
                 Log.d(TAG,"isEdit: ["+isEdit+"]");
-
-
 
 
                 RequestHandler rh = new RequestHandler();
@@ -1024,12 +1067,14 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
                         address2_areaName= jo.getString(Config.TAG_ADDRESS2_AREANAME);
                         address2_batu= jo.getString(Config.TAG_ADDRESS2_BATU);
                         address2_mukim= jo.getString(Config.TAG_ADDRESS2_MUKIM);
+                        status= jo.getString(Config.TAG_STATUS);
                         isEdit = "Y";
+                        //status = "New";
 
                         if(checkLatLonIsExist.equalsIgnoreCase("true")){
 
                             // View edit dioalog
-                            viewEditDialog(Integer.parseInt(id), barcode, latitude, longitude, fullAddress, address2_no, address2_streetType, address2_streetName, address2_areaType, address2_areaName, address2_batu, address2_mukim, isEdit);
+                            viewEditDialog(Integer.parseInt(id), barcode, latitude, longitude, fullAddress, address2_no, address2_streetType, address2_streetName, address2_areaType, address2_areaName, address2_batu, address2_mukim, isEdit, status);
                         }
                     }
 
@@ -1112,12 +1157,15 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
                 // Get the longitude
                 double lng = jo.getDouble(Config.TAG_LONGITUDE);
 
+                //Get the status
+                String stat = jo.getString(Config.TAG_STATUS);
+
                 //Log.d(TAG,"Latitude ["+lat+"] and Longitude ["+lng+"]");
 
                 LatLng location = new LatLng(lat, lng);
 
                 // Drawing the marker in the Google Maps
-                drawMarker(lat, lng);
+                drawMarker(lat, lng, stat);
             }
 
         } catch (JSONException e) {
@@ -1125,15 +1173,46 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
         }
     }
 
-    private void drawMarker(double lat, double lng){
+    private void drawMarker(double lat, double lng, String stat){
         // Creating an instance of MarkerOptions
         //MarkerOptions markerOptions = new MarkerOptions();
 
         // Setting latitude and longitude for the marker
         //String fullLatLon = "3.0626802710852146,101.60144817084074";
+        //String status = "Empty";
         final LatLng position = new LatLng(lat, lng);
-        final MarkerOptions options = new MarkerOptions().position(position);
-        mMap.addMarker(options);
+
+        if (stat.equalsIgnoreCase("Agree")){
+
+            final MarkerOptions options = new MarkerOptions().position(position).icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+            mMap.addMarker(options);
+
+        }else if (stat.equalsIgnoreCase("Reject")){
+
+            final MarkerOptions options = new MarkerOptions().position(position).icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_RED));
+            mMap.addMarker(options);
+
+        }else if (stat.equalsIgnoreCase("Empty")){
+
+            final MarkerOptions options = new MarkerOptions().position(position).icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
+            mMap.addMarker(options);
+
+        }else if (stat.equalsIgnoreCase("Not at home")){
+
+            final MarkerOptions options = new MarkerOptions().position(position).icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
+            mMap.addMarker(options);
+
+        }else {
+
+            final MarkerOptions options = new MarkerOptions().position(position).icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_CYAN));
+            mMap.addMarker(options);
+        }
+
     }
     //end display all the location as marker on google maps
 
@@ -1325,6 +1404,41 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
                 dataAdapterMukim.setDropDownViewResource(R.layout.spinner_dropdown_item);
                 spinnerHouseMukim.setAdapter(dataAdapterMukim);
                 Log.d(TAG,"MukimCollection: ["+mLine+"]");
+            }
+        } catch (IOException e) {
+            //log the exception
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    //log the exception
+                }
+            }
+        }
+    }
+
+    //load Status
+    public void getStatusList(){
+
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(
+                    new InputStreamReader(getAssets().open("status.txt"), "UTF-8"));
+
+            List<String> listStatus = new ArrayList<String>();
+
+            // do reading, usually loop until end of file reading
+            String mLine;
+            while ((mLine = reader.readLine()) != null) {
+                //process line
+                //. ...
+                listStatus.add(mLine);
+                ArrayAdapter<String> dataAdapterStatus = new ArrayAdapter<String>(this,
+                        R.layout.spinner_item, listStatus);
+                dataAdapterStatus.setDropDownViewResource(R.layout.spinner_dropdown_item);
+                spinnerHouseStatus.setAdapter(dataAdapterStatus);
+                Log.d(TAG,"StatusCollection: ["+mLine+"]");
             }
         } catch (IOException e) {
             //log the exception

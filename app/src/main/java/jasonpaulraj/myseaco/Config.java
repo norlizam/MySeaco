@@ -47,6 +47,7 @@ public class Config {
     public static final String KEY_ADDRESS2_MODIFIEDBY = "modifiedBy";
     public static final String KEY_ADDRESS2_MODIFIEDDATE = "modifiedDate";
     public static final String KEY_ISEDIT = "isEdit";
+    public static final String KEY_STATUS = "status";
 
     //JSON Tags
     public static final String TAG_JSON_ARRAY="result";
@@ -70,6 +71,7 @@ public class Config {
     public static final String TAG_ADDRESS2_MODIFIEDDATE = "modifiedDate";
     public static final String TAG_CHECK_LOCATION = "checkLatLonIsExist";
     public static final String TAG_CHECKDUP_LOCATION = "checkLatLonNotDup";
+    public static final String TAG_STATUS = "status";
 
     public static final String TAG_PAGE_COUNT = "pageCount";
 
