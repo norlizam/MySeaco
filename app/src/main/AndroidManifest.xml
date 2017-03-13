@@ -86,6 +86,16 @@
             android:label="View Map Detail"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".BarcodeScanner2"
+            android:label="Scan Barcode???"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".BarcodeScanner3"
+            android:label="Scan Barcode???"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

@@ -56,10 +56,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d(TAG,"ENTER VIEW LOCATION");
-                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                Intent intent = new Intent(MainActivity.this, BarcodeScanner3.class);
+                //Intent intent = new Intent(MainActivity.this, BarcodeScanner2.class);
+                /*Intent intent = new Intent(MainActivity.this, MapsActivity.class);
                 intent.putExtra("userID", userID);
                 intent.putExtra("userRegtype", userRegtype);
-                intent.putExtra("radModeType", radModeType);
+                intent.putExtra("radModeType", radModeType);*/
                 startActivity(intent);
             }
         });
