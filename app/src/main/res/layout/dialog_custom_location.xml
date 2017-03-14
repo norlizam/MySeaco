@@ -16,91 +16,61 @@
             android:id="@+id/btnSave" />
     </LinearLayout>
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:id="@+id/tableLayout1"
-        android:layout_below="@+id/linearLayout">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:text="@string/txtViewBarcode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtViewBarcode" />
-
-            <TextView
-                android:text="@string/txtViewDot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/editTxtBarcode" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:text="@string/txtViewLat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtViewLat" />
-
-            <TextView
-                android:text="@string/txtViewDot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/editTxtLat" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:text="@string/txtViewLon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtViewLon" />
-
-            <TextView
-                android:text="@string/txtViewDot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/editTxtLon" />
-        </TableRow>
-    </TableLayout>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tableLayout1">
+        android:layout_below="@+id/linearLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
+
+            <TextView
+                android:text="@string/txtViewBarcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewBarcode" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTxtBarcode" />
+
+
+            <Button
+                android:text="@string/btnBarScanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnBarScanner" />
+
+            <TextView
+                android:text="@string/txtViewLat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewLat" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTxtLat" />
+
+            <TextView
+                android:text="@string/txtViewLon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtViewLon" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTxtLon" />
 
             <TextView
                 android:text="@string/txtViewAddress"

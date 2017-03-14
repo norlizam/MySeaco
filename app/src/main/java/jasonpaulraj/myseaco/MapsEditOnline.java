@@ -8,6 +8,7 @@ import android.Manifest;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -87,10 +88,10 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
     public KmlLayer klayer4;
 
     private MySQLiteHelper db;
-
     // public CommonRadioCheck commonRadioCheck;
-
     private GoogleApiClient client;
+    //qr code scanner object
+    private IntentIntegrator qrScan;
 
     Context context;
     Spinner spinnerHouseStreetType, spinnerHouseAreaType, spinnerHouseMukim, spinnerHouseStatus;
@@ -99,7 +100,7 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
     RadioGroup radGrpHouseStreetType, radGrpHouseAreaType, radGrpHouseMukim;
     RadioButton radBtnHouseStreetType_Jln, radBtnHouseStreetType_Lrg, radBtnHouseStreetType_NA, radBtnHouseAreaType_Tmn, radBtnHouseAreaType_Kg, radBtnHouseAreaType_Felda,
             radBtnHouseAreaType_NA, radBtnHouseMukim_Bekok, radBtnHouseMukim_Chaah, radBtnHouseMukim_Gemereh, radBtnHouseMukim_Segamat, radBtnHouseMukim_Jabi;
-    Button btnSave;
+    Button btnSave, btnBarScanner;
     TextView txtViewStatus;
     String mapsBarcode, mapsLatitude, mapsLongitude, mapsAddress, mapsHouseNo, mapsHouseStreetType, mapsHouseStreetName, mapsHouseAreaType, mapsHouseAreaName,
             mapsHouseBatu, mapsHouseMukim, mapsFullAddress2, mapInsertBy,mapsModifiedBy, mapsHouseStatus, checkLatLonIsExist, isEdit, id, barcode, fullAddress, fullAddress2, address2_no, address2_streetType,
@@ -327,11 +328,16 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
         mapsFullAddress2 ="";
         editTxtAddress.setEnabled(false);
         txtViewStatus = (TextView) dialog.findViewById(R.id.txtViewStatus);
+        spinnerHouseStatus = (Spinner) dialog.findViewById(R.id.spinnerStatus);
 
         spinnerHouseStreetType = (Spinner) dialog.findViewById(R.id.spinnerHouseStreetType);
         spinnerHouseAreaType = (Spinner) dialog.findViewById(R.id.spinnerHouseAreaType);
         spinnerHouseMukim = (Spinner) dialog.findViewById(R.id.spinnerHouseMukim);
-        spinnerHouseStatus = (Spinner) dialog.findViewById(R.id.spinnerStatus);
+        btnBarScanner = (Button) dialog.findViewById(R.id.btnBarScanner);
+
+        //intializing scan object
+        qrScan = new IntentIntegrator(this);
+
 
         if(isEdit.equals("N")){
             //set invisible
@@ -487,6 +493,15 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
         editTxtLat.setText(latitude);
         editTxtLon.setText(longitude);
         editTxtAddress.setText(fullAddress);
+
+        //scan barcode function
+        btnBarScanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //initiating the qr code scan
+                qrScan.initiateScan();
+            }
+        });
 
         //save function
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -1450,6 +1465,25 @@ public class MapsEditOnline extends FragmentActivity implements OnMapReadyCallba
                     //log the exception
                 }
             }
+        }
+    }
+
+    //Getting the scan results
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            //if qrcode has nothing in it
+            if (result.getContents() == null) {
+                Toast.makeText(this, "Result Not Found", Toast.LENGTH_LONG).show();
+            } else {
+                //if qr contains data
+                //txtViewBarcode.setText(result.getContents());
+                editTxtBarcode.setText(result.getContents());
+                Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
         }
     }
 }
